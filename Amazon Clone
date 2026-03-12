@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <style>
+        /* CSS STYLES */
+        :root {
+            --amazon-dark: #131921;
+            --amazon-light: #232f3e;
+            --amazon-yellow: #febd69;
+            --amazon-blue: #007185;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eaeded;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: var(--amazon-dark);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+            display: flex;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-bar button {
+            background-color: var(--amazon-yellow);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .nav-item {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-item span:first-child {
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        .nav-item span:last-child {
+            font-weight: bold;
+        }
+
+        /* Sub-header */
+        .sub-header {
+            background-color: var(--amazon-light);
+            color: white;
+            padding: 8px 20px;
+            font-size: 14px;
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0), #eaeded), url('https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 20px;
+        }
+
+        /* Product Grid */
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 1;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .product-card img {
+            max-height: 200px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .rating {
+            color: #ffa41c;
+            margin: 5px 0;
+        }
+
+        .add-btn {
+            background-color: #ffd814;
+            border: 1px solid #fcd200;
+            padding: 8px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .add-btn:hover {
+            background-color: #f7ca00;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">amazon<span style="font-size:12px; color:white;">.clone</span></div>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Search Amazon">
+            <button>🔍</button>
+        </div>
+
+        <div class="nav-links">
+            <div class="nav-item">
+                <span>Hello, Sign in</span>
+                <span>Account & Lists</span>
+            </div>
+            <div class="nav-item">
+                <span>Returns</span>
+                <span>& Orders</span>
+            </div>
+            <div class="nav-item">
+                <span>Your</span>
+                <span>Cart</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub Header -->
+    <div class="sub-header">
+        <span>☰ All</span>
+        <span>Today's Deals</span>
+        <span>Customer Service</span>
+        <span>Registry</span>
+        <span>Gift Cards</span>
+        <span>Sell</span>
+    </div>
+
+    <!-- Hero Banner -->
+    <div class="hero"></div>
+
+    <!-- Product Grid -->
+    <div class="product-container">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <h3>Electronics</h3>
+            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Watch">
+            <div class="rating">★★★★☆</div>
+            <div class="price">$299.99</div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <h3>Home & Kitchen</h3>
+            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Blender">
+            <div class="rating">★★★★★</div>
+            <div class="price">$49.99</div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <h3>Books</h3>
+            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Book">
+            <div class="rating">★★★★☆</div>
+            <div class="price">$12.50</div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+            <h3>Gaming</h3>
+            <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Keyboard">
+            <div class="rating">★★★★★</div>
+            <div class="price">$89.00</div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+    </div>
+
+    <script>
+        // Simple Interaction
+        const buttons = document.querySelectorAll('.add-btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert('Item added to cart!');
+            });
+        });
+    </script>
+</body>
+</html>
